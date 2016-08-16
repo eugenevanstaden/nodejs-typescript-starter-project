@@ -27,4 +27,5 @@ TODO List:
 - Use express.static => See how to deploy static content to CDN rather than serving it from the node app (more angular stuff)
 - See how to use babel with typescript
 - Use swagger to generate documetation
+- Handle http statuses
 - Others ideas ???
