@@ -13,7 +13,11 @@ TODO List:
 - Use cors
 - Use body parser
 - Use conpression
-- Use Helmet
+- Security
+ - Use Helmet
+ - Use ratelimiter
+ - Use cookie-session
+ - Use csurf (Anti forgery token)
 - Use socket.io ??? => maybe a different template
 - Use Tslint
 - Use bluebird
