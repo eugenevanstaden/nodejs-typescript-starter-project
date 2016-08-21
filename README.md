@@ -4,8 +4,6 @@ A starter project to build a nodejs rest api with typescript
 
 TODO List:
 
-- Create the structure of the project (folders)
-- Init the app.ts file
 - Create a config file
 - Open database connection and close db connection when app stop
 - Add passport for authentication
@@ -19,12 +17,9 @@ TODO List:
  - Use cookie-session
  - Use csurf (Anti forgery token)
 - Use socket.io ??? => maybe a different template
-- Use Tslint
 - Use bluebird
-- Use debug
 - Use express-validation
 - use mocha ... ??? 
-- Use nodemon
 - Use cookieParser
 - Use methodOverride  
 - Use flash
