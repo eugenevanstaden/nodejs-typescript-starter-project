@@ -33,3 +33,14 @@ TODO List:
 - Use swagger to generate documetation
 - Handle http statuses
 - Others ideas ???
+
+
+#Installation
+
+Install nodejs https://nodejs.org/en/download/
+Install mongodb https://www.mongodb.com/download-center#community
+
+npm install -g typescript gulp-cli
+
+
+Run npm Install && typings install
