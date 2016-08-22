@@ -58,12 +58,12 @@ gulp.task("run", ["watch"], function (cb) {
     let started = false;
 
     let nodeServerOptions = {
-        script: './dist/index.js',
+        script: './dist/server.js',
         delayTime: 5,
         env: {
             'PORT': 5000
         },
-        watch: ["./dist/index.js"]
+        watch: ["./dist/server.js"]
     }
 
     return nodemon(nodeServerOptions)

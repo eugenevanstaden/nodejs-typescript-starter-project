@@ -1,14 +1,20 @@
 /// <reference path="../typings/index.d.ts" />
-import express = require("express");
-import http = require("http");
+import debug = require("debug");
+import nconf = require("nconf");
+import expressConfig = require("./config/express");
 
-const debug = require("debug")("app-start");
-const app = express();
+// get the logger
+const debugr = debug("server:start");
 
+// import config file
+nconf.file({ file: __dirname + "/config.json" });
 
-app.set("port", process.env.PORT || 5000);
+// Get the configured app
+const app = expressConfig();
 
-http.createServer(app).listen(this.app.get("port"), () => {
-    debug("Server listening on port 5000");
+// listen
+app.listen(app.get("port"), () => {
+    debugr(`Server listening on port ${app.get("port")}`);
 });
 
+export default app;
