@@ -4,9 +4,13 @@ A starter project to build a nodejs rest api with typescript
 
 TODO List:
 
+<<<<<<< HEAD
 - Create the structure of the project (folders)
 - ~~Init the app.ts file~~
 - ~~Create a config file~~
+=======
+- Create a config file
+>>>>>>> 272e9b413a90a73e8cf3d7ec0f79e129a76f9f69
 - Open database connection and close db connection when app stop
 - Add passport for authentication
 - Look at cluster:Add link to pm2 or strongloop
@@ -19,6 +23,7 @@ TODO List:
  - Use cookie-session
  - Use csurf (Anti forgery token)
 - Use socket.io ??? => maybe a different template
+<<<<<<< HEAD
 - ~~Use Tslint~~
 - Use bluebird
 - ~~Use debug~~
@@ -30,6 +35,14 @@ TODO List:
 - ~~Use flash~~
 - ~~Use morgan~~
 - Use winston
+=======
+- Use bluebird
+- Use express-validation
+- use mocha ... ??? 
+- Use cookieParser
+- Use methodOverride  
+- Use flash
+>>>>>>> 272e9b413a90a73e8cf3d7ec0f79e129a76f9f69
 - Use express.static => See how to deploy static content to CDN rather than serving it from the node app (more angular stuff)
 - See how to use babel with typescript
 - Use swagger to generate documetation
