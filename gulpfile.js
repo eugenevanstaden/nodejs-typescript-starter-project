@@ -8,6 +8,7 @@ var tslint = require('gulp-tslint');
 var typescript = require('gulp-typescript');
 var uglify = require('gulp-uglify');
 var path = require("path");
+var runSequence = require("run-sequence");
 var tsProject = typescript.createProject('tsconfig.json');
 
 // Validate typescript
@@ -26,8 +27,14 @@ gulp.task('clean', function () {
     ]);
 });
 
+//copy any config files
+gulp.task("config", function () {
+    gulp.src(['./src/**/.env.*'], { base: './src' })
+        .pipe(gulp.dest('./dist'));
+});
+
 // build the app for dev
-gulp.task('build', ['tslint', 'clean'], function () {
+gulp.task('scripts', function () {
     var tsResult = tsProject.src()
         .pipe(typescript(tsProject));
 
@@ -35,8 +42,10 @@ gulp.task('build', ['tslint', 'clean'], function () {
         .pipe(gulp.dest('./dist'));
 });
 
+
+
 // build the app for prod: same as dev + concat + uglify
-gulp.task('build-prod', ['tslint', 'clean'], function () {
+gulp.task('build-prod', function () {
     var tsResult = tsProject.src()
         .pipe(typescript(tsProject));
 
@@ -54,7 +63,7 @@ gulp.task('watch', function () {
 });
 
 // run the app with nodemon
-gulp.task("run", ["watch"], function (cb) {
+gulp.task("nodemon", function (cb) {
     let started = false;
 
     let nodeServerOptions = {
@@ -84,6 +93,11 @@ gulp.task("run", ["watch"], function (cb) {
         .on("exit", function () {
             console.log("clean exit");
         })
+});
+
+//manual builld
+gulp.task("run", function () {
+    runSequence('tslint', 'clean', 'config', 'scripts', 'watch', 'nodemon');
 });
 
 gulp.task('default', ['run']);

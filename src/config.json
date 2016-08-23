@@ -1,6 +1,0 @@
-{
-    "env": "development",
-    "db_connection": "mongodb://localhost/myapplication",
-    "port": 5000,
-    "logs": "./logs/myapplication.log"
-}

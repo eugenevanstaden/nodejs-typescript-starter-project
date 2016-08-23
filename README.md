@@ -44,6 +44,11 @@ TODO List:
 Install nodejs https://nodejs.org/en/download/
 Install mongodb https://www.mongodb.com/download-center#community
 
+gulp:remove old gulp version: npm rm --global gulp
+install new client: npm install --global gulp-cli
+add new gulp : npm install --save-dev gulp
+
+
 npm install -g typescript gulp-cli
 
 
