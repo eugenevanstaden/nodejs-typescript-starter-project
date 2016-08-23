@@ -1,20 +1,51 @@
 /// <reference path="../typings/index.d.ts" />
 import debug = require("debug");
-import nconf = require("nconf");
-import expressConfig = require("./config/express");
+import dotenv = require("dotenv");
+import httpServerConfig = require("./config/express");
+import mongoose = require("mongoose");
+import Promise = require("bluebird");
 
-// get the logger
-const debugr = debug("server:start");
+/**
+ * Load environment variables from .env file, where API keys and passwords are configured.
+ */
+dotenv.config({ path: __dirname +  "/.env.example" });
 
-// import config file
-nconf.file({ file: __dirname + "/config.json" });
+/**
+ * Get the default debugger for the http server
+ */
+const debugr = debug("server:http");
 
-// Get the configured app
-const app = expressConfig();
+
+mongoose.Promise = Promise; 
+// Handle Error connection
+mongoose.connection.on("error", (error: any) => {
+    debugr("MongoDB Connection Error. Please make sure that MongoDB is running:\r\n" + error);
+});
+
+mongoose.connection.once("open", () => {
+    debugr("conected to db");
+});
+
+mongoose.connect(process.env.DB_URI).then(() => {
+    debugr("connected ???");
+}).catch((error: any) => {
+    debugr(error);
+    process.exit(1);
+});
+
+/**
+ * Application configuration.
+ */
+const app = httpServerConfig();
+
+
+//const db = mongooseConfig();
 
 // listen
 app.listen(app.get("port"), () => {
     debugr(`Server listening on port ${app.get("port")}`);
 });
+
+
 
 export default app;

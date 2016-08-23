@@ -61,7 +61,7 @@ gulp.task("run", ["watch"], function (cb) {
         script: './dist/server.js',
         delayTime: 5,
         env: {
-            'PORT': 5000
+            'PORT': 3000
         },
         watch: ["./dist/server.js"]
     }

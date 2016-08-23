@@ -7,14 +7,13 @@ import flash = require("connect-flash");
 import helmet = require("helmet");
 import methodOverride = require("method-override");
 import morgan = require("morgan");
-import nconf = require("nconf");
 
 export = () : express.Application =>  {
 
     const app = express();
 
     // Set application port
-    app.set("port", nconf.get("port") || 5000);
+    app.set("port", process.env.PORT || 3000);
 
     // HTTP request logger middleware for node.js
     if ("development" === app.get("env")) {
