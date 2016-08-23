@@ -7,10 +7,11 @@ TODO List:
 
 - Create the structure of the project (folders)
 - ~~Init the app.ts file~~
-- ~~Create a config file~~
+- ~~Create a config file => move to dotenv ~~
 - Open database connection and close db connection when app stop
 - Add passport for authentication
-- Look at cluster:Add link to pm2 or strongloop
+- Look at cluster => Add link to pm2 or strongloop
+- Build => do we need gulp or npm is enough for pure nodejs rest app ?
 - ~~Use cors~~
 - ~~Use body parser~~
 - ~~Use conpression~~
