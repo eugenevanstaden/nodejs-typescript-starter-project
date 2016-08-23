@@ -8,6 +8,7 @@ TODO List:
 - Create the structure of the project (folders)
 - ~~Init the app.ts file~~
 - ~~Create a config file => move to dotenv ~~
+- use mongoose => how to set the type MongoosePromise<T> = Promise<T> in the global definition file ???
 - Open database connection and close db connection when app stop
 - Add passport for authentication
 - Look at cluster => Add link to pm2 or strongloop
