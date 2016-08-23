@@ -15,7 +15,6 @@
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "mongodb": "registry:dt/mongodb#2.1.0+20160602142941",
     "mongoose": "registry:dt/mongoose#4.5.4+20160807120805",
-    "mongoose-promise": "registry:dt/mongoose-promise#4.5.4+20160720003345",
     "morgan": "registry:dt/morgan#1.7.0+20160524142355",
     "node": "registry:dt/node#6.0.0+20160818175514",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"

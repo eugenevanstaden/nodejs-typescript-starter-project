@@ -59,7 +59,7 @@ gulp.task('build-prod', function () {
 
 // watching changes in src ts files
 gulp.task('watch', function () {
-    gulp.watch('./src/**/*.ts', ['build']);
+    gulp.watch('./src/**/*.ts', ['scripts']);
 });
 
 // run the app with nodemon
@@ -96,8 +96,13 @@ gulp.task("nodemon", function (cb) {
 });
 
 //manual builld
-gulp.task("run", function () {
+gulp.task("build", function () {
+    runSequence('tslint', 'clean', 'config', 'scripts');
+});
+
+//manual builld
+gulp.task("serve-dev", function () {
     runSequence('tslint', 'clean', 'config', 'scripts', 'watch', 'nodemon');
 });
 
-gulp.task('default', ['run']);
+gulp.task('default', ['serve-dev']);
